@@ -6,13 +6,19 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import hpp from "hpp";
 
-
 const app = express();
 import * as path from "path";
 import router from "./routes/api.js";
 
-import { MONGODB_CONNECTION, PORT, MAX_JSON_SIZE, URL_ENCODED, WEB_CACHE, REQUEST_LIMIT_TIME, REQUEST_LIMIT_NUMBER } from "./app/config/config.js";
-
+import {
+  MONGODB_CONNECTION,
+  PORT,
+  MAX_JSON_SIZE,
+  URL_ENCODED,
+  WEB_CACHE,
+  REQUEST_LIMIT_TIME,
+  REQUEST_LIMIT_NUMBER,
+} from "./app/config/config.js";
 
 // Global application middlewares
 app.use(cors());
@@ -28,7 +34,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-
 // Web Caching
 app.set("etag", WEB_CACHE);
 
@@ -42,7 +47,7 @@ mongoose
     console.log("Database Connection Error");
   });
 
-  // Set API Routes
+// Set API Routes
 app.use("/api", router);
 
 // Set application storage
@@ -50,6 +55,5 @@ app.use(express.static("storage"));
 
 // Run your express backend project
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}`);
-  });
-  
+  console.log(`App running on port ${PORT}`);
+});
