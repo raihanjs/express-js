@@ -3,13 +3,19 @@ const router = express.Router();
 
 import * as TaskController from '../app/controllers/taskController.js';
 
-// Read Route
+// ======================================================================Create Route
 router.post('/createtask', TaskController.createTask);
-// Create Route
+// -- Params
+router.post('/createtaskparam/:name/:mail/:id', TaskController.createTaskParam);
+// -- Query String
+router.post('/createtaskstring', TaskController.createTaskQuery);
+// -- Upload File
+router.post('/uploadfile', TaskController.UploadFile)
+// ======================================================================Read Route
 router.get('/readtask', TaskController.readTask);
-// Update Route
+// ======================================================================Update Route
 router.put('/updatetask', TaskController.updateTask);
-// Delete Route
+// ======================================================================Delete Route
 router.delete('/deletetask', TaskController.deleteTask);
 
 export default router;

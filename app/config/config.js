@@ -1,3 +1,5 @@
+import * as path from "node:path";
+
 export const MONGODB_CONNECTION = "";
 
 export const JWT_SECRET = "raihangaziborhanashrafi2025";
@@ -17,3 +19,7 @@ export const REQUEST_LIMIT_NUMBER = 3000; // per 15 min 3000 req allowed
 export const WEB_CACHE = false;
 
 export const PORT = 5000;
+
+export function UPLOAD_FOLDER(fileName){
+    return path.resolve(process.cwd(), 'storage', fileName);
+}

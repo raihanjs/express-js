@@ -5,6 +5,7 @@ import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import hpp from "hpp";
+import fileUpload from "express-fileupload";
 
 const app = express();
 import * as path from "path";
@@ -27,6 +28,12 @@ app.use(express.urlencoded({ extended: URL_ENCODED }));
 app.use(hpp());
 app.use(helmet());
 app.use(cookieParser());
+
+// File Upload Middleware
+app.use(fileUpload({
+  limits: { fileSize: 50 * 1024 * 1024 },
+}));
+
 // Rate Limiter
 const limiter = rateLimit({
   windowMs: REQUEST_LIMIT_TIME,
