@@ -46,14 +46,14 @@ app.set("etag", WEB_CACHE);
 
 // MongoDB Connection
 mongoose
-  .connect(MONGODB_CONNECTION, { authIndex: true })
-  .then(() => {
+.connect(MONGODB_CONNECTION, { autoIndex: true })
+.then(() => {
     console.log("Connceted to Database");
   })
-  .catch((err) => {
+  .catch(() => {
     console.log("Database Connection Error");
   });
-
+  
 // Set API Routes
 app.use("/api", router);
 

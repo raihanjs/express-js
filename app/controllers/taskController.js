@@ -20,9 +20,9 @@ export const createTaskQuery = async (req,res) => {
 }
 // Upload File
 export const UploadFile = async (req,res) => {
-    let myFile = req.files['myFile']
-    let myFilePath = UPLOAD_FOLDER(myFile.name)
-    await moveFile(myFile, myFilePath)
+    let myFile = req.files['myFile'];
+    let myFilePath = UPLOAD_FOLDER(myFile.name);
+    await moveFile(myFile, myFilePath);
     return res.json({message:"successfully moved file"});
 }
 // Read TASK

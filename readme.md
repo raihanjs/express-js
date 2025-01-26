@@ -32,7 +32,7 @@
             - 
         - utility
             - emailUtility
-            - tokenUtility
+            - tokenUtility (Encode And Decode JWT TOKEN)
         - routes
             - api.js
         - storage
