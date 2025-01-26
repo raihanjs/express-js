@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "abd9e893-46b5-4014-a589-8b2fc2607ddf",
+		"name": "Express-Project-Structure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32030612"
+	},
+	"item": [
+		{
+			"name": "Task API",
+			"item": [
+				{
+					"name": "Task Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/createtask",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"createtask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Create Param",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/createtaskparam/Raihan/raihan@mail.com/C3850",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"createtaskparam",
+								"Raihan",
+								"raihan@mail.com",
+								"C3850"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/readtask",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"readtask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/updatetask",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"updatetask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/deletetask",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"deletetask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Create Query",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/createtaskstring?country=Bangladesh&lang=Bangla",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"createtaskstring"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "Bangladesh"
+								},
+								{
+									"key": "lang",
+									"value": "Bangla"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/C:/Users/Raihan/Pictures/Capture.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/uploadfile",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"uploadfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token API",
+			"item": [
+				{
+					"name": "Token Encode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "mail",
+								"value": "raihan123@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "_id",
+								"value": "123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/encodetoken",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"encodetoken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Decode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaWhhbjEyM0BnbWFpbC5jb20iLCJ1c2VyX2lkIjoiMTIzIiwiaWF0IjoxNzM3ODc0NjIyLCJleHAiOjE3NDA0NjY2MjJ9.r44SwRs_4uAehnq2nk8ojVRxqyBjNFXwUJhg7K0p6LE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/decodetoken",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"decodetoken"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaWhhbjEyM0BnbWFpbC5jb20iLCJ1c2VyX2lkIjoiMTIzIiwiaWF0IjoxNzM3ODc0NjIyLCJleHAiOjE3NDA0NjY2MjJ9.r44SwRs_4uAehnq2nk8ojVRxqyBjNFXwUJhg7K0p6LE",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email API",
+			"item": [
+				{
+					"name": "Send Email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "rayhangazi1024@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "emailText",
+								"value": "Testing Email Sending Function",
+								"type": "text"
+							},
+							{
+								"key": "emailSubject",
+								"value": "Testing Email",
+								"type": "text"
+							},
+							{
+								"key": "EmailHTMLBody",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rayhangazi1024@gmail.com\",\r\n    \"emailText\": \"Testing Email from express js\",\r\n    \"emailSubject\" : \"DEMO testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/sendemail",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"sendemail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "User Profile AUTH",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/userprofile",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"userprofile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FILE API",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/C:/Users/Raihan/Pictures/8.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/fileupload",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"fileupload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:5000/api/",
+			"type": "string"
+		}
+	]
+}
