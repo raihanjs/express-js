@@ -60,6 +60,11 @@ app.use("/api", router);
 // Set application storage
 app.use(express.static("storage"));
 
+// Undefined Route
+app.use('*', (req,res) => {
+  res.status(404).json({status:"fail", data: "Not found"})
+})
+
 // Run your express backend project
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
